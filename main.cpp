@@ -13,14 +13,22 @@ int main(){
     // pathfinder object
     pathfinder pathObj;
 
-    // array for map
+    // array for map 5 rows 6 columns
     int arr[5][6] = {
-        {cellObj1,cellObj1,cellObj1,cellObj1,cellObj1,cellObj1}
         {cellObj0,cellObj0,cellObj0,cellObj0,cellObj0,cellObj1}
-        {cellObj1,cellObj1,cellObj1,cellObj1,cellObj0,cellObj1}
-        {cellObj1,cellObj0,cellObj0,cellObj0,cellObj0,cellObj1}
-        {cellObj1,cellObj2,cellObj1,cellObj1,cellObj1,cellObj1}
+        {cellObj1,cellObj1,cellObj0,cellObj1,cellObj0,cellObj1}
+        {cellObj0,cellObj0,cellObj0,cellObj1,cellObj0,cellObj1}
+        {cellObj0,cellObj1,cellObj1,cellObj1,cellObj0,cellObj1}
+        {cellObj1,cellObj1,cellObj1,cellObj2,cellObj0,cellObj1}
     };
+    // easier visualization of map
+    /*int arr[5][6] = {
+        {0,0,0,0,0,1}
+        {1,1,0,1,0,1}
+        {0,0,0,1,0,1}
+        {0,1,1,1,0,1}
+        {1,1,1,2,0,1}
+    };*/
 
     // pointer to array
     int *arrPtr;
@@ -30,13 +38,6 @@ int main(){
     pathObj.search();
 
 
-    /*int arr[5][6] = {
-        {1,1,1,1,1,1}
-        {0,0,0,0,0,1}
-        {1,1,1,1,0,1}
-        {1,0,0,0,0,1}
-        {1,2,1,1,1,1}
-    };*/
 
 
 
