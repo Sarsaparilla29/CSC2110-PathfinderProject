@@ -25,6 +25,8 @@ int main(){
     // pointer to array
     int *arrPtr;
     &arrPtr = arr;
+
+    // search function
     pathObj.search();
 
 
