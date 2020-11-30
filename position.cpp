@@ -1,7 +1,7 @@
 #include <iostream>
 #include "position.h"
 
-void posiiton::setColumn(int acolumn){
+void position::setColumn(int acolumn){
     column = acolumn;
 }
 void position::setRow(int arow){
