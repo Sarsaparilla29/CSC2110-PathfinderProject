@@ -1,6 +1,14 @@
 #pragma once
-
-class pathfinder {
+#include "position.h"
+class pathfinder
+{
 private:
-    //include a private map variable which is a pointer to a bi-dimensional array of cell objects
+	int* map;
+	position currentPosition;
+
+public:
+	void search();
+	pathfinder(int* pmap, int* initialColumn, int* initialRow); //constructor
+	pathfinder(); //default constructor
+
 };
