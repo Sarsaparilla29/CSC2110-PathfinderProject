@@ -9,6 +9,5 @@ private:
 public:
 	void search();
 	pathfinder(int* pmap, int* initialColumn, int* initialRow); //constructor
-	pathfinder(); //default constructor
 
 };
