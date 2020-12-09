@@ -5,6 +5,7 @@ class pathfinder
 private:
 	int* map;
 	position currentPosition;
+	void display();
 
 public:
 	void search();
