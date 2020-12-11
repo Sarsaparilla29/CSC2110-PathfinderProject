@@ -1,50 +1,42 @@
 #include <iostream>
 #include "cell.h"
-#include "position.h"
+//#include "position.h"
 #include "pathfinder.h"
 
 int main(){
-    // cell objects
-    /*cell cellObj0 = 0;
-    cell cellObj1 = 1;
-    cell cellObj2 = 2;
-    cell cellObj3 = 3;*/
+    // from zoom meeting dec 3
+    // create map
+    cell fullmap[5][6];
+    // fill the map with walls (1)
+    for(int i = 0; i < 5; i++)
+        for(int j = 0; j < 6; j++)
+            fullmap[i][j].setCellType(1);
 
-    // pathfinder object
-    pathfinder pathObj;
+    // updating specific cells with empty(0) or goal(2) values
+    fullmap[1][0].setCellType(0);
+    fullmap[1][1].setCellType(0);
+    fullmap[1][2].setCellType(0);
+    fullmap[1][3].setCellType(0);
+    fullmap[1][4].setCellType(0);
+    fullmap[2][4].setCellType(0);
+    fullmap[3][4].setCellType(0);
+    fullmap[4][4].setCellType(0);
+    fullmap[5][4].setCellType(2);
+    // initial position will be 1,0
+    
+    pathfinder pf(&fullmap[0][0],1,0);
+    pf.search();
+    std::cout << "END";
 
-    // array for map 5 rows 6 columns
-    /*int arr[5][6] = {
-        {cellObj0,cellObj0,cellObj0,cellObj0,cellObj0,cellObj1;}
-        {cellObj1,cellObj1,cellObj0,cellObj1,cellObj0,cellObj1;}
-        {cellObj0,cellObj0,cellObj0,cellObj1,cellObj0,cellObj1;}
-        {cellObj0,cellObj1,cellObj1,cellObj1,cellObj0,cellObj1;}
-        {cellObj1,cellObj1,cellObj1,cellObj2,cellObj0,cellObj1;}
-    };*/
 
-    cell arr[5][6] = {
-        {cell(0,0),cell(0,1),cell(0,2),cell(0,3),cell(0,4),cell(0,5)}
-        {cell(1,0),cell(1,1),cell(1,2),cell(1,3),cell(1,4),cell(1,5)}
-        {cell(2,0),cell(2,1),cell(2,2),cell(2,3),cell(2,4),cell(2,5)}
-        {cell(3,0),cell(3,1),cell(3,2),cell(3,3),cell(3,4),cell(3,5)}
-        {cell(4,0),cell(4,1),cell(4,2),cell(4,3),cell(4,4),cell(4,5)}
-    };
 
-    // easier visualization of map
-    /*int arr[5][6] = {
-        {0,0,0,0,0,1}
-        {1,1,0,1,0,1}
-        {0,0,0,1,0,1}
-        {0,1,1,1,0,1}
-        {1,1,1,2,0,1}
-    };*/
+    //cellObj.setCellType(arr[0][0]);
 
     // pointer to array
-    int *arrPtr;
-    arrPtr = &arr;
+    //int *Ptr = &arr[0][0];
 
     // search function
-    pathObj.search();
+    //pathObj.search();
 
     // end of program
     return 0;
