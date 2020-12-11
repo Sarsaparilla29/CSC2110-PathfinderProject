@@ -1,11 +1,19 @@
 #include "Pathfinder.h"
 
+void pathfinder::display()
+{
+	cout << "(" << currentPosition.getColumn() << currentPosition.getRow() << "), ";
+}
+
 void pathfinder::search()
 {
 	do //Still wrapping my head around this, hopefully we can discuss during the next meeting
 	{
 		switch (currentPosition.getCellType())
 		{
+		case 0:
+			cout << "This cell is empty";
+			break;
 		case 1:
 			cout << "This is a wall";
 			break;
@@ -18,4 +26,11 @@ void pathfinder::search()
 		}
 
 	} while (0);
+}
+
+pathfinder::pathfinder(int* pmap, int inC, int inR)
+{
+	map = pmap;
+	currentPosition.setColumn(inC);
+	currentPosition.setRow(inR);
 }
