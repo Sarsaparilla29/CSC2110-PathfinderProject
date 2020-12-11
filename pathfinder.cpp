@@ -2,7 +2,7 @@
 
 void pathfinder::display()
 {
-	cout << "(" << currentPosition.getColumn() << currentPosition.getRow() << "), ";
+	cout << "(" << currentPosition.getColumn() << currentPosition.getRow() << ") -> ";
 }
 
 void pathfinder::search()
