@@ -18,10 +18,14 @@ int main(){
     fullmap[1][2].setCellType(0);
     fullmap[1][3].setCellType(0);
     fullmap[1][4].setCellType(0);
-    fullmap[2][4].setCellType(0);
+    fullmap[1][5].setCellType(0);
+    fullmap[2][5].setCellType(0);
+    fullmap[3][5].setCellType(0);
     fullmap[3][4].setCellType(0);
-    fullmap[4][4].setCellType(0);
-    fullmap[5][4].setCellType(2);
+    fullmap[3][3].setCellType(0);
+    fullmap[3][2].setCellType(0);
+    fullmap[4][2].setCellType(0);
+    fullmap[5][2].setCellType(2);
     // initial position will be 1,0
     
     pathfinder pf(&fullmap[0][0],1,0);
