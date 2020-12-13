@@ -1,17 +1,16 @@
-#pragma once
+//#pragma once
+#include <vector>
+#include <string>
+#include "cell.h"
 #include "position.h"
-class pathfinder
-{
-private:
-	int* map;
-	position currentPosition;
-	void display();
 
-public:
-	void search();
-	bool dfs(position p);
-	void search2();
-	pathfinder(int* pmap, int initialColumn, int initialRow); //constructor
-	int checkCellType(int c);
-
+class pathfinder {
+    private:
+        cell* map;
+        position currentPosition;
+        void display();
+        bool dfs(position p, std::vector<std::string>& v);
+    public:
+        void search();
+        pathfinder(cell* pmap, int initialColumn, int initialRow); //constructor
 };
