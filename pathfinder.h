@@ -9,6 +9,9 @@ private:
 
 public:
 	void search();
-	pathfinder(int* pmap, int* initialColumn, int* initialRow); //constructor
+	bool dfs(position p);
+	void search2();
+	pathfinder(int* pmap, int initialColumn, int initialRow); //constructor
+	int checkCellType(int c);
 
 };
