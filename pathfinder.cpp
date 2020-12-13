@@ -5,29 +5,63 @@ void pathfinder::display()
 	cout << "(" << currentPosition.getColumn() << currentPosition.getRow() << ") -> ";
 }
 
-void pathfinder::search() //Function for the schmooving
+void pathfinder::search() //FUnction for schmovement
 {
-	do //Still wrapping my head around this, hopefully we can discuss during the next meeting
+	display(); //For initial position
+	if(dfs(currentPosition) == true)
 	{
-		if (currentPosition.getColumn() < *map)
-		{
-			if (checkCellType(currentPosition.getColumn() + 1) == 0)
-			{
-				currentPosition.setCellType(3); //Marks it as visited
-			}
+		display();
+	}
+	else
+	{
+		cout << "I'm sorry friend, no path was found :(" << endl;
+	}
+}
 
-			else if (checkCellType(currentPosition.getColumn() + 1) == 2)
-			{
-				break; //Ends the function call to end at the goal
-			}
+bool pathfinder::dfs(position p)
+{
+	const int rowSize = 5;
+	const int columnSize = 6;
 
-			else if (checkCellType(currentPosition.getColumn() + 1) == 3)
-			{
-				cout << "We been here cuz."; //Something when the programs goes to an already visted cell
-			}
-		}
-		
-	} while(currentPosition.getRow() != 1 || currentPosition.getColumn() != 1); //Stops when met with a wall
+	//Order of action: up(decrease row), right(increase column), down(increase row value), left(decrease column)
+
+
+	//position objects to the positions around the current position
+	position upPosition(p.getRow() - 1, p.getColumn());
+	position rightPosition(p.getRow(), p.getColumn() + 1);
+	position downPosition(p.getRow() + 1, p.getColumn());
+	position leftPosition(p.getRow(), p.getColumn() - 1);
+
+	//check for goal
+	if (p.getCellType() == 2)
+	{
+		display();
+		return true;
+	}
+
+	//up
+	if (p.getRow() - 1 >= 0 && checkCellType(p.getRow() - 1) != 1 && checkCellType(p.getRow() - 1) != 3 && dfs(upPosition))
+	{
+		//display();
+		return true;
+	}
+	//right
+	else if (p.getColumn() + 1 >= 0 && checkCellType(p.getColumn() + 1) != 1 && checkCellType(p.getColumn() + 1) != 3 && dfs(rightPosition))
+	{
+		return true;
+	}
+	//down
+	else if (p.getRow() + 1 >= 0 && checkCellType(p.getRow() + 1) != 1 && checkCellType(p.getRow() + 1) != 3 && dfs(downPosition))
+	{
+		return true;
+	}
+	//left
+	else if (p.getColumn() - 1 >= 0 && checkCellType(p.getColumn() - 1) != 1 && checkCellType(p.getColumn() - 1) != 3 && dfs(leftPosition))
+	{
+		return true;
+	}
+
+	return false;
 }
 
 pathfinder::pathfinder(int* pmap, int inC, int inR) //constructor
