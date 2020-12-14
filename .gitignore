@@ -3,7 +3,6 @@
 *.depend
 *.o
 *.gch
-Makefile
 output
 bin
 obj

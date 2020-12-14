@@ -1,13 +1,6 @@
-#include <fstream>
 #include <iostream>
 #include <iomanip>
-#include <cstring>
-#include <cstdlib>
-using namespace std;
-#include "Position.h"
-#include "Cell.h"
-#include "Pathfinder.h"
-
+#include "position.h"
 
 void position::setColumn(int acolumn) 
 {

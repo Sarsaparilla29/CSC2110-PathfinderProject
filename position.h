@@ -1,12 +1,8 @@
-#include <fstream>
 #include <iostream>
 #include <iomanip>
-#include <cstring>
-#include <cstdlib>
 using namespace std;
 
-class position
-{
+class position {
 private:
 	int column;
 	int row;
